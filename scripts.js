@@ -16,7 +16,7 @@ $(function(){
 		$("#toTopBtn").fadeIn();
 	}else{
 		$("#toTopBtn").fadeOut();
-	}	
+	}
 
 });//End ready function
 
@@ -44,22 +44,26 @@ $(document).scroll(function(){
 /********************************
 * Setting links to smooth scroll
 *********************************/
-$('#toTopBtn').click(function(){
-	$('html').animate({scrollTop: 0}, 'slow');
+$('#toTopBtn').click(function(e){
+	e.preventDefault();
+	$('html, body').animate({scrollTop: 0}, "slow");
 })
 
-$('.servicesLink').click(function(){
-	$('html').animate({scrollTop: $("#services").offset().top}, "slow");
+$('.servicesLink').click(function(e){
+	$('html, body').animate({scrollTop: $("#services").offset().top}, "slow");
 })
 
-$('.testimonialsLink').click(function(){
-	$('html').animate({scrollTop: $("#testimonials").offset().top}, "slow");
+$('.testimonialsLink').click(function(e){
+	e.preventDefault();
+	$('html, body').animate({scrollTop: $("#testimonials").offset().top}, "slow");
 })
 
-$('.aboutLink').click(function(){
-	$('html').animate({scrollTop: $("#about").offset().top}, "slow");
+$('.aboutLink').click(function(e){
+	e.preventDefault();
+	$('html, body').animate({scrollTop: $("#about").offset().top}, "slow");
 })
 
-$('.contactLink').click(function(){
-	$('html').animate({scrollTop: $("#contact").offset().top}, "slow");
+$('.contactLink').click(function(e){
+	e.preventDefault();
+	$('html, body').animate({scrollTop: $("#contact").offset().top}, "slow");
 })
