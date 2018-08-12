@@ -1,0 +1,296 @@
+$red: #e60000;
+$grey: #c0c0c0;
+$darkGrey: #353535;
+$white: #fff;
+$black: #000;
+$title:'Rajdhani', sans-serif;
+$font: 'Roboto Condensed', sans-serif;
+$boxShadow: 0 1px 3px $black;
+$oBlack: rgba(0,0,0, 0.7);
+
+*{
+	font-family: $font;
+}
+h1, h2, h3{
+	font-family: $title;
+	font-weight: bold;
+	&:after{
+		content:'';
+		width: 25%;
+		height: 2px;
+		display: block;
+		margin: inherit;
+		background: $darkGrey;
+	}
+}
+@media screen and(max-width: 991px){
+	p{
+		font-size: 1.2rem;
+	}
+}
+.black{
+	background-color: $oBlack;
+	height: inherit;
+}
+.p-full, .p-half{
+	padding: 50px 0;
+}
+.wrapper{
+	margin: 0 10rem;
+	@media screen and(max-width: 991px){
+		margin: 0 1rem;
+	}
+}
+.banner{
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.navbar{
+	padding: 0;
+}
+.required, .red{
+	color:$red;
+}
+/**************************************Header***************************************/
+header{
+
+	.social-bar{
+		background: $red;
+		color:$white;
+		span{
+			padding: 10px;
+		}
+		a{
+			font-size: 26px;
+			color:$white;
+			transition: all 0.2s ease-in-out;
+			&:hover{
+				text-decoration: none;
+				color:$grey;
+
+			}
+		}
+		.phone{
+			font-size: 16px;
+			vertical-align: 10%;
+		}
+	}
+
+}//End Header
+/************************************Navbar*****************************************/
+nav{
+	margin: 0 3rem;
+	background:transparent;
+	@media screen and(max-width:991px){
+		margin: 0 20px;
+	}
+	.navbar-toggler{
+		-webkit-appearance: none;
+		&:hover{
+			.icon-bar{
+				background: $red;
+			}
+		}
+		.icon-bar{
+			display: block;
+			width: 22px;
+			height: 2px;
+			margin: 4px;
+			background: $white;
+			border-radius: 1px;
+		}
+	}
+
+	.navbar-toggler.collapsed .top-bar{
+		transform: rotate(0deg);
+		transform-origin: 0% 0%;
+	}
+
+	.navbar-toggler.collapsed .middle-bar{
+			opacity: 1;
+	}
+
+	.navbar-toggler.collapsed .bottom-bar{
+		transform: rotate(0deg);
+		transform-origin: 0% 0%;
+	}
+
+	.top-bar{
+		transform: rotate(45deg);
+		transform-origin: 10% 10%;
+	}
+	.middle-bar{
+		opacity: 0;
+	}
+	.bottom-bar{
+		transform: rotate(-45deg);
+		transform-origin: 10% 90%;
+	}
+
+	li{
+		padding: 10px;
+		a{
+			color:$white;
+			font-family: $title;
+			font-size: 18px;
+			font-weight: bold;
+			&:hover{
+				color:$red;
+			}
+		}
+	}
+	.custom-nav-right{
+		@media screen and(max-width: 992px){
+			float:right;
+		}
+	}
+
+	#r-brand, #c-brand{
+		display: none;
+	}
+}//End nav
+/************************************Banner*******************************************/
+.home-banner{
+	background-image: url("images/home-banner.jpg");
+	background-position: center;
+	.v-center{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 85vh;
+	}
+	h2{
+		color:$grey;
+		text-shadow: $boxShadow;
+	}
+	p{
+		color:$white;
+	}
+}//End Home Banner
+/************************************Services**********************************************/
+.services{
+	background: $grey;
+	ul{
+		@media screen and(max-width: 768px){
+			padding: 0;
+		}
+		li{
+			list-style-type: none;
+			&:before{
+				content: "-";
+				padding-right: 5px;
+				color:$red;
+				font-weight: bold;
+				@media screen and(max-width: 768px){
+					content: "";
+					padding-right: 0px;
+				}
+			}
+		}
+	}
+//Handling smaller screens
+	@media screen and(max-width: 991px){
+		h3{
+			margin: 20px 0;
+		}
+		.title{
+			width: 100%;
+		}
+		.text-right{
+			padding-top: 30px;
+			padding-bottom: 20px;
+
+		}
+	}
+}//End Services
+/************************************Testimonials***********************************/
+.testimonials{
+	background-image: url("images/contact-banner.jpg");
+	background-position: center center;
+	color:$white;
+	.carousel-inner{
+		height: 150px;
+	}
+	@media screen and(max-width: 991px){
+		.carousel-inner{
+			height: 250px;
+		}
+	}
+}
+/************************************About******************************************/
+.about{
+	background: $grey;
+}
+/************************************Contact***************************************/
+.contact{
+	background-image: url("images/contact-banner.jpg");
+	background-position: center center;
+	color:$white;
+	.wrapper{
+		padding: 20px;
+		border-radius: 5px;
+	}
+	.row{
+		padding: 10px 300px;
+		@media screen and (max-width: 1400px){
+			padding: 10px 0px;
+		}
+	}
+	.col-md-6:last-child{
+		border-left: 1px solid $white;
+		@media screen and (max-width: 991px){
+			border:none !important;
+		}
+	}
+	a{
+		color:$white;
+		&:hover{
+			color:$red;
+			text-decoration: none;
+		}
+	}
+}
+/************************************Footer*****************************************/
+.footer{
+	background: $darkGrey;
+
+	@media screen and(max-width: 991px){
+		.navbar{
+			text-align: left !important;
+		}
+	}
+
+	p{
+		color:$white;
+	}
+
+	a{
+		color:$white;
+		&:hover{
+			color:$red;
+		}
+	}
+	.order-md-3{
+		a{
+			font-size: 26px;
+			padding: 0 20px;
+		}
+	}
+}
+
+/*********************************toTopBtn*************************************/
+.toTopBtn{
+	a{
+	position: fixed;
+	right: 50px;
+	bottom: 100px;
+	color:$red;
+	font-size: 30px;
+	padding: 10px;
+	z-index: 1;
+		&:hover{
+			color:$white;
+		}
+	}
+}
