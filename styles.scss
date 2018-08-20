@@ -79,8 +79,10 @@ header{
 }//End Header
 /************************************Navbar*****************************************/
 nav{
-	margin: 0 3rem;
 	background:transparent;
+	.navbar-nav{
+		padding-top: 20px;
+	}
 	@media screen and(max-width:991px){
 		margin: 0 20px;
 	}
@@ -147,6 +149,7 @@ nav{
 
 	#r-brand, #c-brand{
 		display: none;
+		margin: 10px 20px;
 	}
 }//End nav
 /************************************Banner*******************************************/
@@ -165,11 +168,32 @@ nav{
 	p{
 		color:$white;
 	}
+	#intro-title{
+		display: none;
+	}
+	@media screen and (max-width: 992px){
+		#intro-title{
+			display: block;
+		}
+	}
 }//End Home Banner
 /************************************Services**********************************************/
 .services{
 	background: $grey;
-	h3{
+	.contactLink{
+		color:$red;
+		&:hover{
+			color: $black;
+		}
+	}
+	.serv-list{
+		font-size: 1rem;
+	}
+	.services-title:after{
+		width: 0;
+		height: 0;
+	}
+	h2{
 		&:after{
 			content:'';
 			width: 70%;
@@ -266,6 +290,19 @@ nav{
 	.fa-phone{
 		color:$red;
 	}
+	.input{
+		border: 2px solid transparent;
+	}
+	.error{
+		border: 2px solid $red;
+	}
+	#errmsg{
+		display: none;
+	}
+	#successmsg{
+		display: none;
+		color: #1e7e34;
+	}
 }
 /************************************Footer*****************************************/
 .footer{
@@ -302,8 +339,8 @@ nav{
 .toTopBtn{
 	a{
 	position: fixed;
-	right: 25px;
-	bottom: 25px;
+	right: 75px;
+	bottom: 50px;
 	color:$red;
 	font-size: 30px;
 	padding: 10px;
@@ -311,5 +348,10 @@ nav{
 		&:active{
 			color:$white;
 		}
+		@media screen and(max-width: 991px){
+			right: 25px;
+			bottom: 25px;
+		}
 	}
+
 }
