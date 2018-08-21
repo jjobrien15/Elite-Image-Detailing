@@ -9,19 +9,6 @@ $(function(){
 
 });//End ready function
 
-
-//Checking width of screen to determine which brand/logo to show
-
-$(window).resize(function(){
-	if($(window).width() > 991){
-		$("#c-brand").fadeIn(500);
-		$("#r-brand").hide();
-	}else{
-		$("#c-brand").hide();
-		$("#r-brand").fadeIn(500);
-	}
-});
-
 $(document).scroll(function(){
 	if($(window).scrollTop() >= 200){
 		$("#toTopBtn").fadeIn();

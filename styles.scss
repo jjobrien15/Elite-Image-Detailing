@@ -47,6 +47,14 @@ h1, h2, h3{
 .required, .red{
 	color:$red;
 }
+@media screen and (max-width: 992px){
+	.full-nav{
+		display: none;
+	}
+	.mini-nav{
+		display: block !important;
+	}
+}
 /**************************************Header***************************************/
 header{
 	.social-bar{
@@ -54,23 +62,23 @@ header{
 		color:$white;
 		.mini-nav{
 			display: none;
-			@media screen and(max-width:991px){
-				margin: 0 20px;
-			}
 			.navbar-toggler{
+				display: flex;
+				margin: auto !important;
+				flex-direction: column;
+				justify-content: center;
+				padding: 10px 0;
 				-webkit-appearance: none;
-				width: 100%;
-				border: 2px solid green;
 				&:hover{
 					.icon-bar{
 						background: $darkGrey;
 					}
 				}
 				.icon-bar{
-					display: block;
+
 					width: 22px;
 					height: 2px;
-					margin: 4px;
+					margin: 2px;
 					background: $white;
 					border-radius: 1px;
 				}
@@ -101,9 +109,8 @@ header{
 				transform: rotate(-45deg);
 				transform-origin: 10% 90%;
 			}
-
 			li{
-				padding: 10px;
+				padding: 10px 0;
 				a{
 					color:$white;
 					font-family: $title;
@@ -111,16 +118,15 @@ header{
 					font-weight: bold;
 					&:hover{
 						color:$red;
+						}
 					}
-				}
 			}
-
-		}
-		@media screen and (max-width: 992px){
-			.mini-nav{
-				display: block;
+			.fa-facebook,
+			.fa-instagram{
+				padding: 0 0.5rem;
 			}
 		}
+	}
 		a{
 			font-size: 26px;
 			color:$white;
@@ -128,14 +134,11 @@ header{
 			&:hover{
 				text-decoration: none;
 				color:$darkGrey;
-
 			}
 		}
 		.phone{
 			font-size: 16px;
 		}
-	}
-
 }//End Header
 /************************************Navbar*****************************************/
 .full-nav{
@@ -200,6 +203,10 @@ header{
 				color:$red;
 			}
 		}
+	}
+	.fa-facebook,
+	.fa-instagram{
+		padding: 0 0.5rem;
 	}
 }//End nav
 /************************************Banner*******************************************/
