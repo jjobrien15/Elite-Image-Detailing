@@ -18,11 +18,6 @@ h1, h2, h3{
 	font-family: $title;
 	font-weight: bold;
 }
-@media screen and(max-width: 991px){
-	p{
-		font-size: 1.2rem;
-	}
-}
 .black{
 	background-color: $oBlack;
 	height: inherit;
@@ -54,12 +49,77 @@ h1, h2, h3{
 }
 /**************************************Header***************************************/
 header{
-
 	.social-bar{
 		background: $red;
 		color:$white;
-		span{
-			padding: 10px;
+		.mini-nav{
+			display: none;
+			@media screen and(max-width:991px){
+				margin: 0 20px;
+			}
+			.navbar-toggler{
+				-webkit-appearance: none;
+				width: 100%;
+				border: 2px solid green;
+				&:hover{
+					.icon-bar{
+						background: $darkGrey;
+					}
+				}
+				.icon-bar{
+					display: block;
+					width: 22px;
+					height: 2px;
+					margin: 4px;
+					background: $white;
+					border-radius: 1px;
+				}
+			}
+
+			.navbar-toggler.collapsed .top-bar{
+				transform: rotate(0deg);
+				transform-origin: 0% 0%;
+			}
+
+			.navbar-toggler.collapsed .middle-bar{
+					opacity: 1;
+			}
+
+			.navbar-toggler.collapsed .bottom-bar{
+				transform: rotate(0deg);
+				transform-origin: 0% 0%;
+			}
+
+			.top-bar{
+				transform: rotate(45deg);
+				transform-origin: 10% 10%;
+			}
+			.middle-bar{
+				opacity: 0;
+			}
+			.bottom-bar{
+				transform: rotate(-45deg);
+				transform-origin: 10% 90%;
+			}
+
+			li{
+				padding: 10px;
+				a{
+					color:$white;
+					font-family: $title;
+					font-size: 18px;
+					font-weight: bold;
+					&:hover{
+						color:$red;
+					}
+				}
+			}
+
+		}
+		@media screen and (max-width: 992px){
+			.mini-nav{
+				display: block;
+			}
 		}
 		a{
 			font-size: 26px;
@@ -78,7 +138,7 @@ header{
 
 }//End Header
 /************************************Navbar*****************************************/
-nav{
+.full-nav{
 	background:transparent;
 	.navbar-nav{
 		padding-top: 20px;
@@ -141,16 +201,6 @@ nav{
 			}
 		}
 	}
-	.custom-nav-right{
-		@media screen and(max-width: 992px){
-			float:right;
-		}
-	}
-
-	#r-brand, #c-brand{
-		display: none;
-		margin: 10px 20px;
-	}
 }//End nav
 /************************************Banner*******************************************/
 .home-banner{
@@ -161,20 +211,23 @@ nav{
 		align-items: center;
 		height: 90vh;
 	}
+	.logo{
+		width: 40%;
+	}
+	@media screen and(max-width: 992px){
+		.logo{
+			width:80%;
+		}
+		.full-nav{
+			display: none;
+		}
+	}
 	h2{
 		color:$grey;
 		text-shadow: $boxShadow;
 	}
 	p{
 		color:$white;
-	}
-	#intro-title{
-		display: none;
-	}
-	@media screen and (max-width: 992px){
-		#intro-title{
-			display: block;
-		}
 	}
 }//End Home Banner
 /************************************Services**********************************************/
@@ -246,8 +299,8 @@ nav{
 .testimonials{
 	background-image: url("images/testimonials-banner.jpg");
 	color:$white;
-	.carousel-inner{
-		height: 150px;
+	.carousel{
+		height: 100%;
 	}
 	@media screen and(max-width: 991px){
 		.carousel-inner{

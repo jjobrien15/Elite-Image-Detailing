@@ -1,14 +1,4 @@
 $(function(){
-
-//Checking width of screen to determine which brand/logo to show
-
-	if($(window).width() > 991){
-			$("#c-brand").fadeIn();
-			$("#r-brand").hide();
-		}else{
-			$("#c-brand").hide();
-			$("#r-brand").fadeIn();
-		}
 //Hide toTopBtn then show when scrolled
 
 	if($(window).scrollTop() >= 200){
