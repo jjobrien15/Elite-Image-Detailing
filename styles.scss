@@ -60,6 +60,7 @@ header{
 	.social-bar{
 		background: $red;
 		color:$white;
+		padding: 0.25rem 0;
 		.mini-nav{
 			display: none;
 			.navbar-toggler{
@@ -117,13 +118,9 @@ header{
 					font-size: 18px;
 					font-weight: bold;
 					&:hover{
-						color:$red;
+						color:$darkGrey;
 						}
 					}
-			}
-			.fa-facebook,
-			.fa-instagram{
-				padding: 0 0.5rem;
 			}
 		}
 	}
@@ -219,7 +216,7 @@ header{
 		height: 90vh;
 	}
 	.logo{
-		width: 40%;
+		width: 60%;
 	}
 	@media screen and(max-width: 992px){
 		.logo{
@@ -356,8 +353,13 @@ header{
 	.error{
 		border: 2px solid $red;
 	}
+	.success{
+		display: none;
+		color: #1e7e34;
+	}
 	#errmsg{
 		display: none;
+		color: $red;
 	}
 	#successmsg{
 		display: none;
