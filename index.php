@@ -19,7 +19,7 @@
 	<meta name="keywords" content="Elite, Image, Auto, Detail, Detaling, Auto Detailing, New Jersey, NJ">
 	<meta name="description" content="Elite Image Detailing of New Jersey">
 
-	<link rel="shortcut icon" href="images/EliteLogoIco.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/EliteIco.ico" type="image/x-icon">
 	<!-- Adding bootstrap css -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<!-- Incliding font-awesome-icons -->
