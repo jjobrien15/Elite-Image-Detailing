@@ -436,7 +436,7 @@ $phone = "";
 						<li class="nav-item"><a class="nav-link aboutLink" href="#about">ABOUT</a></li>
 						<li class="nav-item"><a class="nav-link contactLink" href="#contact">CONTACT</a></li>
 					</ul>
-				</nav>
+        </nav>
 			</div>
 
 			<div class="col-md-4 order-md-3 text-center my-auto">
@@ -460,6 +460,7 @@ $phone = "";
 			<div class="col-md-3 my-auto order-md-2 text-center">
 					<img class="nav-logo" src="images/EliteLogo.png" style="width: 150px;">
 					<p>Designed & Developed by <a href="https://github.com/jjobrien15" target="_blank">Joe O'Brien</a></p>
+          <a href="admin/login.php" class="admin-link" target="_blank">Admin Sign In</a>
 			</div>
 
 		</div>

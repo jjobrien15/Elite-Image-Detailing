@@ -57,6 +57,7 @@ h1, h2, h3{
 }
 /**************************************Header***************************************/
 header{
+	overflow-x: hidden;
 	.social-bar{
 		background: $red;
 		color:$white;
