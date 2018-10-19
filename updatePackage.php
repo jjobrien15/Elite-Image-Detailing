@@ -64,14 +64,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 header('Location: packages.php');
 }
 ?>
-<script type="text/javascript">
-var counter = 1;
+<script>
   function addPerk(){
-    counter++;
-    var perk = prompt("Enter new perk", "");
-    $('<div class="form-group"><label for="' + perk + '">Update ' + perk + ': </label><input class="form-control" type="text" name="detail'+
-    counter +'" value="'+ perk +'""/></div>').appendTo($('.extraPerk'));
-    $('#detailCounter').val(counter);
+    $("#addPerkModal").fadeIn();
+  }
+  function fadePerkModal(){
+    $("#addPerkModal").fadeOut();
   }
 </script>
 <div class="content">
@@ -115,13 +113,32 @@ var counter = 1;
           <a class="btn btn-danger perk-delete" href="deleteDetail.php?id=<?php echo $detail['id'];?>">Delete</a>
         </div>
       <?php  } ?>
-      <div class="extraPerk"></div>
+      <div class="addPerk"></div>
         <input type="hidden" name="counter" value="<?php echo $counter; ?>"/>
       <div class="f-right">
         <input class="btn btn-success" type="submit" value="Update"/>
         <a href="packages.php"><div class="btn btn-danger">Cancel</div></a>
       </div>
     </form>
+    <div id="addPerkModal" class="modal mx-auto" style="display:none; width: 25%; margin-top: 15%; ">
+      <div class="modal-content">
+        <div class="modal-header" style="background: #353535; color: #fff">
+          <h5 class="modal-title">Add Perk</h5>
+        </div>
+        <div class="modal-body" style="background: #c8c8c8">
+          <form method="POST" action="">
+            <div class="form-group">
+              <label for="newPerk">Enter new perk:</label>
+              <input class="form-control" name="newPerk" type="text" value="">
+            </div>
+            <div class="form-group f-right">
+              <button class="btn btn-success" onclick="addPerk.php" type="button">Add</button>
+              <input class="btn btn-danger" onclick="fadePerkModal();" value="Cancel" style="width: 6rem"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
