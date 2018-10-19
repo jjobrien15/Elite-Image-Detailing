@@ -1,0 +1,147 @@
+/*
+$red: #e60000;
+$grey: #c0c0c0;
+$darkGrey: #353535;
+*/
+body{
+  background: #c0c0c0;
+}
+.login-body{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background: #353535;
+  color: #fff;
+}
+.nav{
+  position: fixed;
+  top:0;
+  left:0;
+  background: #fff;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.5);
+  background: #353535;
+  color: #fff;
+  z-index: 1000;
+}
+.logo{
+  height: 100%;
+  width: auto;
+  padding-left: 30px;
+}
+.admin-logo{
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+}
+.sidenav{
+  margin-top: 60px;
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 250px;
+  background: #353535;
+  color: #fff;
+  border-right: 1px solid rgba(211, 211, 211, 0.5);
+  z-index: 1000;
+}
+.nav-link,
+.sidenav-link{
+  color: #fff;
+  z-index: 1000;
+}
+.nav-link{
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(211, 211, 211, 0.5);
+}
+.nav-link:last-child{
+  border-right: 1px solid rgba(211, 211, 211, 0.5);
+}
+.sidenav-link{
+  padding: 1rem;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.5);
+}
+.sidenav a:hover,
+.nav a:hover{
+  color:#fff;
+  background: #e60000;
+  text-decoration: none;
+}
+.sidenav p{
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-content: flex-end;
+}
+.heading-content{
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #000
+}
+.service, .testimonial{
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+.service a{
+  margin-right: 0.5rem;
+}
+.content{
+  margin-left: 300px !important;
+  margin-top: 100px !important;
+  padding: 0 2rem;
+}
+.inner-content{
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.spacer{
+  display: flex;
+  flex:1;
+}
+.success{
+  display: none;
+  color: #1e7e34;
+}
+.error{
+  color: #e60000;
+}
+.center{
+  display:flex;
+  justify-content: center;
+}
+.footer{
+  text-align: center;
+}
+.f-right{
+  float: right;
+}
+.nav h1{
+  padding: 0 1rem;
+}
+.btn{
+  margin: 0.5rem 0.2rem;
+}
+table, tr{
+  width: 100%;
+}
+tr{
+  border-bottom: 1px solid #000;
+}
+td{
+  max-width: 350px;
+}
+ul{
+  list-style: none;
+}
+ul li{
+  text-decoration: none;
+}
+
+.perk-input{
+  padding-right: 10%;
+}
