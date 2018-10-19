@@ -64,14 +64,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 header('Location: packages.php');
 }
 ?>
-<script>
-  function addPerk(){
-    $("#addPerkModal").fadeIn();
-  }
-  function fadePerkModal(){
-    $("#addPerkModal").fadeOut();
-  }
-</script>
 <div class="content">
   <div class="heading-content">
     <h3>Edit Package</h3>
@@ -110,7 +102,7 @@ header('Location: packages.php');
           <label for="detail<?php echo $counter; ?>">Update <?php echo $detail['detail']; ?>: </label>
           <input type="hidden" name="detailId<?php echo $counter; ?>" value="<?php echo $detail['id']; ?>"/>
           <input class="form-control perk-input" type="text" name="detail<?php echo $counter; ?>" value="<?php echo $detail['detail']?>"/>
-          <a class="btn btn-danger perk-delete" href="deleteDetail.php?id=<?php echo $detail['id'];?>">Delete</a>
+          <a class="btn btn-danger perk-delete" href="deleteDetail.php?id=<?php echo $detail['id'];?>&packageID=<?php echo $selectedPackage ?>">Delete</a>
         </div>
       <?php  } ?>
       <div class="addPerk"></div>
@@ -120,25 +112,52 @@ header('Location: packages.php');
         <a href="packages.php"><div class="btn btn-danger">Cancel</div></a>
       </div>
     </form>
+
+    <script>
+      function addPerk(){
+        $("#addPerkModal").fadeIn();
+      }
+      function addNewPerk(){
+        if($('#newPerkName').val()){
+          var data = $("#getNewPerk").serialize();
+          $.ajax({
+            data: data,
+            type: "post",
+            url: "addPerk.php",
+            success: function(data){
+              location.reload(true);
+            }
+          });
+        }else{
+          $("#newPerkName").css("border","2px solid #e60000");
+          $("<p style='color: #e60000; display:inline-block;'>Value is required!</p>").appendTo("#newPerkNameLabel");
+        }
+      }
+      function fadePerkModal(){
+        $("#addPerkModal").fadeOut();
+      }
+    </script>
+
     <div id="addPerkModal" class="modal mx-auto" style="display:none; width: 25%; margin-top: 15%; ">
       <div class="modal-content">
         <div class="modal-header" style="background: #353535; color: #fff">
           <h5 class="modal-title">Add Perk</h5>
         </div>
         <div class="modal-body" style="background: #c8c8c8">
-          <form method="POST" action="">
+          <form id="getNewPerk" method="POST">
             <div class="form-group">
-              <label for="newPerk">Enter new perk:</label>
-              <input class="form-control" name="newPerk" type="text" value="">
+              <label id="newPerkNameLabel" for="newPerk">Enter new perk: </label>
+              <input id="newPerkName" class="newPerkName form-control" name="newPerk" type="text" value=""/>
+              <input type="hidden" name="packageID" value="<?php echo $selectedPackage; ?>"/>
             </div>
             <div class="form-group f-right">
-              <button class="btn btn-success" onclick="addPerk.php" type="button">Add</button>
+              <button class="btn btn-success" onclick="addNewPerk();" type="button">Add</button>
               <input class="btn btn-danger" onclick="fadePerkModal();" value="Cancel" style="width: 6rem"/>
             </div>
           </form>
         </div>
       </div>
-    </div>
+    </div><!-- End modal -->
   </div>
 
 </div>

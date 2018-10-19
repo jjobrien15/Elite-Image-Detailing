@@ -5,6 +5,7 @@
 
 
   $selectedDetail = $_GET['id'];
+  $selectedPackage = $_GET['packageID'];
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     try{
@@ -12,7 +13,7 @@
       $stmt = $pdo->prepare($sql);
       $stmt->bindValue(':id', $selectedDetail);
       $stmt->execute();
-      header('Location: packages.php');
+      header('Location: updatePackage.php?id=' . $selectedPackage);
     }catch(Exception $e){
       echo $e->getMessage();
     }
@@ -38,7 +39,7 @@
     <p>Are you sure you want to delete <?php echo $service['detail']; ?> from package?</p>
     <form method="POST">
       <input class="btn btn-success" type="submit" value="Yes"/>
-      <a class="btn btn-danger" href="updatePackage.php?id=<?php echo $selectedDetail ?>">No</a>
+      <a class="btn btn-danger" href="updatePackage.php?id=<?php echo $selectedPackage; ?>">No</a>
     </form>
   </div>
 </div>
