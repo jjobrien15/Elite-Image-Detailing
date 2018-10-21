@@ -266,9 +266,9 @@ $phone = "";
           ?>
 					<div class="col-md-6 my-auto text-right">
 						<h3><?php echo $package['title']; ?></h3>
-						<p >Cars From <span class="price">&dollar;<?php echo $package['priceSmall'];?></span><br />
-						SUV/Small Trucks From <span class="price">&dollar;<?php echo $package['priceMedium'];?></span><br />
-						Large SUV/Trucks From <span class="price">&dollar;<?php echo $package['priceLarge'];?></span></p>
+						<p >Cars From <span class="price"><?php if($package['priceSmall'] != 0){echo "&dollar;" . $package['priceSmall'];}else{ echo "N/A";}?></span><br />
+						SUV/Small Trucks From <span class="price"><?php if($package['priceMedium'] != 0){echo "&dollar;" . $package['priceMedium'];}else{ echo "N/A";}?></span><br />
+						Large SUV/Trucks From <span class="price"><?php if($package['priceLarge'] != 0){echo "&dollar;" . $package['priceLarge'];}else{ echo "N/A";}?></span></p>
 					</div>
 
 					<div class="col-md-6 py-5 text-left">
@@ -435,6 +435,7 @@ $phone = "";
 						<li class="nav-item"><a class="nav-link testimonialsLink" href="#testimonials">TESTIMONIALS</a></li>
 						<li class="nav-item"><a class="nav-link aboutLink" href="#about">ABOUT</a></li>
 						<li class="nav-item"><a class="nav-link contactLink" href="#contact">CONTACT</a></li>
+            <li class="nav-item"><a href="login.php" class="admin-link" target="_blank">ADMIN</a></li>
 					</ul>
         </nav>
 			</div>
@@ -460,7 +461,6 @@ $phone = "";
 			<div class="col-md-3 my-auto order-md-2 text-center">
 					<img class="nav-logo" src="images/EliteLogo.png" style="width: 150px;">
 					<p>Designed & Developed by <a href="https://github.com/jjobrien15" target="_blank">Joe O'Brien</a></p>
-          <a href="admin/login.php" class="admin-link" target="_blank">Admin Sign In</a>
 			</div>
 
 		</div>

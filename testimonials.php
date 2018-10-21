@@ -38,10 +38,10 @@
         ?>
       <tr>
         <td>
-          <?php echo $test['id']; ?>
+          <?php echo $test['id'];?>
         </td>
         <td>
-          <?php echo $test['author']; ?>
+          <?php echo $test['author'];?>
         </td>
         <span class="spacer"></span>
         <td>

@@ -84,7 +84,7 @@ if(!empty($_POST['uname'])){
 </head>
 <body>
 <div class="login-body">
-<img class="admin-logo" src="..\images\EliteLogo.png"/>
+<img class="admin-logo" src="images\EliteLogo.png"/>
 
 <div class="col-md-4 mx-auto p-5">
 

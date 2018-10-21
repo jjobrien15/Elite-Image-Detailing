@@ -101,8 +101,14 @@ header('Location: packages.php');
         <div class="form-group">
           <label for="detail<?php echo $counter; ?>">Update <?php echo $detail['detail']; ?>: </label>
           <input type="hidden" name="detailId<?php echo $counter; ?>" value="<?php echo $detail['id']; ?>"/>
-          <input class="form-control perk-input" type="text" name="detail<?php echo $counter; ?>" value="<?php echo $detail['detail']?>"/>
-          <a class="btn btn-danger perk-delete" href="deleteDetail.php?id=<?php echo $detail['id'];?>&packageID=<?php echo $selectedPackage ?>">Delete</a>
+          <div class="row">
+          <div class="col-md-11">
+            <input class="form-control perk-input" type="text" name="detail<?php echo $counter; ?>" value="<?php echo $detail['detail']?>"/>
+          </div>
+          <div class="col-md-1">
+            <a class="btn btn-danger perk-delete" href="deleteDetail.php?id=<?php echo $detail['id'];?>&packageID=<?php echo $selectedPackage ?>">Delete</a>
+          </div>
+        </div>
         </div>
       <?php  } ?>
       <div class="addPerk"></div>
@@ -134,7 +140,7 @@ header('Location: packages.php');
         }
       }
       function fadePerkModal(){
-        $("#addPerkModal").fadeOut();
+        $("#addPerkModal").hide();
       }
     </script>
 

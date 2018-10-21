@@ -4,7 +4,7 @@
 
 	<div class="spacer"></div>
 
-	<a href="javascript:void(0)" class="nav-link"><?php echo $_SESSION['name']; ?></a>
+	<a href="javascript:void(0)" class="nav-link">Welcome, <?php echo $_SESSION['name']; ?></a>
 	<a href="signout.php" class="nav-link">Sign Out</a>
 
 </div>

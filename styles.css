@@ -142,6 +142,6 @@ ul li{
   text-decoration: none;
 }
 
-.perk-input{
-  padding-right: 10%;
+.perk-delete{
+  margin: 0;
 }
